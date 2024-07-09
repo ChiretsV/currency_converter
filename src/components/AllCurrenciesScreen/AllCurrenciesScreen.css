@@ -1,0 +1,86 @@
+.currencies-content{
+    width: 80%;
+    margin: 0 auto;
+    padding: 10vh 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.input-wrapper{
+    padding: 20px;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+.input-date{
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid rgb(114, 155, 244);
+    outline: none;
+    width: 20vw;    
+    color: rgb(23, 47, 97);
+    cursor: pointer;
+}
+
+
+.submit-btn{
+    width: 20vw;
+    color: rgb(23, 47, 97);
+    border: 3px solid rgb(114, 155, 244);
+    font-size: 26px;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.currencies{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+    padding-bottom: 100px;
+}
+
+.currencies__item{
+    width: 35%;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: rgb(114, 155, 244);
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-shadow: 9px 10px 12px -7px rgba(128,126,128,1);
+    -moz-box-shadow: 9px 10px 12px -7px rgba(128,126,128,1);
+    box-shadow: 9px 10px 12px -7px rgba(128,126,128,1);
+    background: rgb(255,255,255);
+    background: linear-gradient(266deg, rgba(255,255,255,1) 30%, rgba(114,155,244,1) 73%);
+}
+
+.first__currency{
+    text-align: left;
+    color: white;
+}
+
+.second__currency{
+    text-align: right;
+    color: #380d0d;
+}
+
+.currencies__item:last-child{
+    display: none;
+}
+
+
+
+
+
+
+
