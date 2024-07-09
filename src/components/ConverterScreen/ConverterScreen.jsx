@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ConverterScreen.css';
+import ShareButton from '../ShareButton/ShareButton';
 
 function ConverterScreen() {
     const [amountA, setAmountA] = useState('');
@@ -41,6 +42,19 @@ function ConverterScreen() {
             });
     }, [currencyA, currencyB]);
 
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const amountAParam = urlParams.get('amountA');
+        const amountBParam = urlParams.get('amountB');
+        const currencyAParam = urlParams.get('currencyA');
+        const currencyBParam = urlParams.get('currencyB');
+
+        if (amountAParam) setAmountA(amountAParam);
+        if (amountBParam) setAmountB(amountBParam);
+        if (currencyAParam) setCurrencyA(currencyAParam);
+        if (currencyBParam) setCurrencyB(currencyBParam);
+    }, []);
+
     const convert = (amount, fromCurrency, toCurrency) => {
         if (!rates[fromCurrency] || !rates[toCurrency]) return '';
         const convertedAmount = (amount * rates[fromCurrency]) / rates[toCurrency];
@@ -59,8 +73,15 @@ function ConverterScreen() {
         setAmountA(convert(value, currencyB, currencyA));
     };
 
+    const userAgent = navigator.userAgent;
+
     return (
         <>
+            <h1 className="page__title">Конвертер валют</h1>
+            <div className="browser-info">
+                <h3>Информация о браузере</h3>
+                <p>{userAgent}</p>   
+            </div> 
             <div className='converter-wrapper'>
                 <div className="currency-wrapper">
                     <input className='currency-input' type="number" value={amountA} onChange={enterAmountA} />
@@ -82,6 +103,7 @@ function ConverterScreen() {
                         ))}
                     </select>
                 </div>
+                <ShareButton params={{ amountA, amountB, currencyA, currencyB }} />
             </div>
         </>
     );

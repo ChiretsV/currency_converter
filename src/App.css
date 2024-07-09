@@ -5,6 +5,14 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.page__title{
+  padding: 10px;
+  background-color: rgb(108, 143, 246);
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+}
+
 .switchers-wrapper{
   width: 100%;
   height: 70px;
@@ -28,5 +36,13 @@
 
 .screen{
   width: 33%;
-  border: 1px solid black;
+  padding: 10px;
+}
+
+.switcher__title{
+  padding: 10px;
+  color: white;
+  font-size: 22px;
+  display: flex;
+  gap: 15px;
 }

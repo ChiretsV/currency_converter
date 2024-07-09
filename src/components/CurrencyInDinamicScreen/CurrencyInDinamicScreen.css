@@ -1,7 +1,23 @@
+.dinamic-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.dinamic-wrapper .input-wrapper{
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dinamic-wrapper .input-date, .dinamic-wrapper .drop-down-menu, .dinamic-wrapper .submit-btn{
+    width: 45%;
+}
+
 .drop-down-menu{
     background-color: transparent;
     padding: 20px;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 10px;
     border: 3px solid rgb(114, 155, 244);
     text-align: center;
@@ -10,7 +26,7 @@
 
 .data-dinamic-table{
     margin: 0 auto;
-    width: 50vw;
+    width: 95%;
     border-collapse: separate;
     border-spacing: 5px;
     border-radius: 20px;

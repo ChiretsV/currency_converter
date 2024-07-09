@@ -7,12 +7,16 @@ import ConverterScreen from './components/ConverterScreen/ConverterScreen';
 function App() {
   const [activeScreens, setActiveScreens] = useState([]);
 
-  const handleCheckboxChange = (screen) => {
-    setActiveScreens((prevActiveScreens) =>
-      prevActiveScreens.includes(screen)
-        ? prevActiveScreens.filter((activeScreen) => activeScreen !== screen)
-        : [...prevActiveScreens, screen]
-    );
+  const clickCheckbox = (screen) => {
+    if (activeScreens.includes(screen)) {
+      setActiveScreens(prevActiveScreens =>
+        prevActiveScreens.filter(activeScreen => activeScreen !== screen)
+      );
+    } else {
+      setActiveScreens(prevActiveScreens =>
+        [...prevActiveScreens, screen]
+      );
+    }
   };
 
   return (
@@ -23,7 +27,7 @@ function App() {
             <input
               type="checkbox"
               checked={activeScreens.includes('allCurrencies')}
-              onChange={() => handleCheckboxChange('allCurrencies')}
+              onChange={() => clickCheckbox('allCurrencies')}
             />
             Курсы валют на выбранную дату
           </label>
@@ -33,7 +37,7 @@ function App() {
             <input
               type="checkbox"
               checked={activeScreens.includes('currencyInDinamic')}
-              onChange={() => handleCheckboxChange('currencyInDinamic')}
+              onChange={() => clickCheckbox('currencyInDinamic')}
             />
             Курс валюты в динамике
           </label>
@@ -43,7 +47,7 @@ function App() {
             <input
               type="checkbox"
               checked={activeScreens.includes('converter')}
-              onChange={() => handleCheckboxChange('converter')}
+              onChange={() => clickCheckbox('converter')}
             />
             Конвертер валют
           </label>

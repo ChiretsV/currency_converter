@@ -1,7 +1,22 @@
+.browser-info{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    border: 3px solid rgb(114, 155, 244);
+    margin-top: 20px;    
+}
+
+.browser-info h3{
+    font-weight: 400;
+    padding: 5px;
+    border-bottom: 2px solid rgb(114, 155, 244);
+}
+
 .currencies-content{
-    width: 80%;
     margin: 0 auto;
-    padding: 10vh 10px 0 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -10,28 +25,29 @@
 .input-wrapper{
     padding: 20px;
     display: flex;
-    gap: 100px;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
 }
 
 .input-date{
     text-align: center;
+    width: 50%;
     padding: 20px;
     font-size: 20px;
     border-radius: 10px;
     border: 3px solid rgb(114, 155, 244);
     outline: none;
-    width: 20vw;    
     color: rgb(23, 47, 97);
     cursor: pointer;
 }
 
 
 .submit-btn{
-    width: 20vw;
     color: rgb(23, 47, 97);
     border: 3px solid rgb(114, 155, 244);
-    font-size: 26px;
+    width: 40%;
+    font-size: 20px;
     padding: 10px;
     border-radius: 15px;
     cursor: pointer;
@@ -40,16 +56,15 @@
 
 .currencies{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
     list-style: none;
-    width: 100%;
-    justify-content: space-around;
-    padding-bottom: 100px;
+    justify-content: center;
+    align-items: center;
 }
 
 .currencies__item{
-    width: 35%;
+    width: 90%;
     text-align: center;
     padding: 10px 20px 10px 20px;
     font-size: 20px;
@@ -74,9 +89,6 @@
     color: #380d0d;
 }
 
-.currencies__item:last-child{
-    display: none;
-}
 
 
 
